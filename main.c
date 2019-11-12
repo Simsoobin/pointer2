@@ -5,14 +5,17 @@
 
 int main(int argc, char *argv[]) {
 	
-	int i =10;
-	int *ptr=&i;
+	char buffer[8];
+	double *pd;
+	int *pi;
 	
-	printf("i=%i, ptr=%p\n",  i, ptr);
-	(*ptr)++;
-	printf("i=%i, ptr=%p\n",  i, ptr);
-	*ptr++;
-	printf("i=%i, ptr=%p\n",  i, ptr);
+	pd =(double *)buffer;
+	*pd=3.14;
+	printf("%f\n", *(double*)buffer);
 	
-	return 0;
+	pi= (int*)buffer;
+	*pi=123;
+	*(pi+1)=456;
+	printf("%d %d\n", *(int*)buffer, *((int*)buffer +1));
+		return 0;
 }
